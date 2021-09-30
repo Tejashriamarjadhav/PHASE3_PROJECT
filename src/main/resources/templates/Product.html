@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>sporty.com</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+	integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+	crossorigin="anonymous" />
+
+<link rel="stylesheet" href="css/utilities.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.cart {
+	width: 3%;
+	position: absolute;
+	top: 30px;
+	left: 89%;
+	cursor: pointer;
+}
+
+.cart:before {
+	content: attr(data-count);
+	color: white;
+	position: absolute;
+	right: 16px;
+	font-size: 15px;
+	text-align: center;
+	top: -12px;
+	width: 20px;
+	height: 20px;
+	background: blue;
+	border-radius: 50%;
+	opacity: 0;
+}
+
+.cart.zero:before {
+	opacity: 1;
+}
+
+section {
+	margin: 1px auto;
+	width: 90%;
+	height: 400px;
+	display: flex;
+	justify-content: space-around;
+}
+
+section div {
+	width: 22%;
+	height: 93%;
+	background: white;
+	padding: 55%;
+	margin: 1px;
+	position: relative;
+}
+
+img {
+	width: 300px;
+	height: 186px;
+}
+
+p {
+	margin: 5px;
+}
+
+h6 {
+	width: 50px;
+	padding: 5px;
+	margin: 10px;
+	font-size: 15px;
+}
+
+button {
+	padding: 5px;
+	background: rgb(0, 128, 255);
+	border: none;
+	outline: none;
+	font-weight: bold;
+	color: #fafafa;
+	cursor: pointer;
+}
+
+section div span {
+	position: absolute;
+	top: 14px;
+	left: 13px;
+	background: red;
+	width: 300px;
+	height: 186px;
+	display: none;
+}
+
+section div span img {
+	width: 100%;
+	height: 100%;
+}
+
+.select {
+	width: 60%;
+	height: 580px;
+	padding: 5%;
+	background: white;
+	position: absolute;
+	top: -1000px;
+	left: 20%;
+	transition: 0.5s;
+	overflow-y: auto;
+	margin: auto;
+}
+
+.select.display {
+	top: 10px;
+}
+
+.select div {
+	width: 100%;
+	height: 200px;
+	display: flex;
+	padding: 5px;
+	border: 1px solid white;
+	position: relative;
+	margin: 5px auto;
+}
+
+.select div img {
+	width: 200px;
+	height: 100%;
+}
+
+.select div p {
+	padding: 5px;
+	color: black;
+}
+
+.select div h6, .select div button {
+	position: absolute;
+	left: 45%;
+	top: 50%;
+	color: black;
+}
+
+.select div button {
+	left: 60%;
+	top: 55%;
+}
+
+.select div span {
+	display: none;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 26px;
+	margin-bottom: 12px;
+	box-shadow: 0 2px 8px 0 rgba(24, 24, 24, 0.2);
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.column:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+	<div class="navbar">
+		<div class="container flex">
+			<h1 class="logo">Sporty Shoes</h1>
+			<nav>
+				<ul>
+					<li><a href="home">Home</a></li>
+					<li><a href="Product">Products</a></li>
+					<li><a href="contact">contact</a></li>
+					<li><a href="login">Login</a></li>
+					<li><h3><span sec:authentication="principal.username"></span></h3></li>
+					<li class="cart"><i class=" fa fa-shopping-cart"></i></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<h2 align="center">Our Products</h2>
+
+	<section>
+		<div class="column">
+			<img src="images\11.jpg" style="width: 88%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹400</h6>
+			<span>buy</span>
+			<button>Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\12.jpg" style="width: 89%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹348</h6>
+			<span></span>
+			<button >Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\13.jpg" style="width: 100%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹345</h6>
+			<span></span>
+			<button>Add-cart</button>
+
+		</div>
+
+	</section>
+		<section>
+		<div class="column">
+			<img src="images\14.jpg" style="width: 60%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹345.89</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\15.jpg" style="width: 69%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹345.89</h6>
+			<span></span>
+			<button >Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\16.jpg" style="width: 100%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹345.89</h6>
+			<span></span>
+			<button>Add-cart</button>
+
+		</div>
+
+	</section>
+		<section>
+		<div class="column">
+			<img src="images\8.jpg" style="width: 90%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹365.89</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\12.jpg" style="width: 89%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹375.89</h6>
+			<span></span>
+			<button >Add-cart</button>
+		</div>
+		<div class="column">
+			<img src="images\13.jpg" style="width: 100%">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Quidem, quo, modi ea voluptas tempora vero cumque incidunt eum animi</p>
+			<h6>₹395.89</h6>
+			<span></span>
+			<button>Add-cart</button>
+
+		</div>
+
+	</section>
+	<div class="select"></div>
+
+
+	<footer class="footer bg-dark py-5">
+		<div class="container grid grid-3">
+			<div>
+				<h1 style="color: black;">SportyShoes.com</h1>
+				<h6 class="xsm">developed by TEJASHRI</h6>
+				<p>Copyright &copy; 2021</p>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="features.html">Features</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="social">
+				<a href="https://github.com/Tejashriamarjadhav" target="_blank"><i
+					class="fab fa-github fa-2x"></i></a> <a
+					href="https://www.facebook.com/teja.kaingade" target="_blank"><i
+					class="fab fa-facebook fa-2x"></i></a> 
+					
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+var noti = document.querySelector('.cart');
+var select = document.querySelector('.select');
+var button = document.getElementsByTagName('button');
+for(var but of button){
+	but.addEventListener('click', (e)=>{
+		var add = Number(noti.getAttribute('data-count') || 0);
+		noti.setAttribute('data-count', add +1);
+		noti.classList.add('zero')
+
+		// image --animation to cart ---//
+		var image = e.target.parentNode.querySelector('img');
+		var span = e.target.parentNode.querySelector('span');
+		var s_image = image.cloneNode(false);
+		span.appendChild(s_image);
+		span.classList.add("active");
+		setTimeout(()=>{
+			span.classList.remove("active");
+			span.removeChild(s_image);
+		}, 500); 
+		
+
+		// copy and paste //
+		var parent = e.target.parentNode;
+		var clone = parent.cloneNode(true);
+		select.appendChild(clone);
+		
+clone.lastElementChild. innerHTML = '<form  action="probookform"><input style=" background-color: Transparent; border: none; color:white;" type="submit" value="Buy-Now"></form>'
+
+		if (clone) {
+			noti.onclick = ()=>{
+				select.classList.toggle('display');	
+			}	
+		
+			
+		}
+	})
+}
+
+</script>
+</body>
+</html>
